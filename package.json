@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "deploy": "npm run build && gh-pages -d dist",
-    "build": "vite build",
+    "predeploy": "vite build --base=./",
+    "deploy": "gh-pages -d dist",
+    "build": "vite build --base=./",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
