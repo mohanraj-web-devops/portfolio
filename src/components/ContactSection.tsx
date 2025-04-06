@@ -41,11 +41,13 @@ const ContactSection = () => {
   const icon = [
     {
       name: 'linkedin',
-      url: 'https://img.icons8.com/?size=100&id=16166&format=png&color=000000'
+      imgUrl: 'https://img.icons8.com/?size=100&id=16166&format=png&color=000000',
+      url: 'https://www.linkedin.com/in/mohanraj-rajaram/'
     },
     {
       name: 'github',
-      url: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000'
+      imgUrl: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000',
+      url: 'https://github.com/mohanraj-web-devops'
     },
     // {
     //   name: 'instagram',
@@ -63,11 +65,11 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     // enable this to send email using emailjs
-    // emailjs.send(
-    //   'service_w6uxqnc',
-    //   'template_8buo5fe',
-    //   formData,
-    //   '2ZFUJExlUZEJ45zAs')
+    emailjs.send(
+      'service_w6uxqnc',
+      'template_8buo5fe',
+      formData,
+      '2ZFUJExlUZEJ45zAs')
     
     setTimeout(() => {
       toast({
@@ -167,12 +169,12 @@ const ContactSection = () => {
                     {icon.map((social) => (
                       <a
                         key={social.name}
-                        href="#"
+                        href={social.url}
                         className="bg-secondary hover:bg-primary hover:text-white transition-colors p-3 rounded-full"
                         aria-label={`${social.name} profile`}
                       >
                         <img 
-                          src={social.url} 
+                          src={social.imgUrl} 
                           alt={social.name} 
                           className="h-5 w-5"
                         />
